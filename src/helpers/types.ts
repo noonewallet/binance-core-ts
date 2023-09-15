@@ -1,7 +1,3 @@
-export interface IHeader {
-  [key: string]: string
-}
-
 export interface IFeeSync {
   level: number
   baseFee: number
