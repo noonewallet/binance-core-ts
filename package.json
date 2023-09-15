@@ -1,0 +1,63 @@
+{
+  "name": "@noonewallet/binance-core-ts",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "engines": {
+    "node": ">=16.15.0"
+  },
+  "scripts": {
+    "build": "tsc && tsc-alias",
+    "prepare": "husky install",
+    "prettier": "prettier --write './**/*.{ts,js,json}'",
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:patch": "standard-version --release-as patch",
+    "release:major": "standard-version --release-as major",
+    "test": "jest --no-cache --runInBand",
+    "test:cov": "jest --coverage --no-cache --runInBand"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [],
+  "license": "MIT",
+  "homepage": "https://github.com/noonewallet/binance-core-ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/noonewallet/binance-core-ts"
+  },
+  "bugs": {
+    "url": "https://github.com/noonewallet/binance-core-ts/issues"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
+    "@types/jest": "^29.2.6",
+    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "@typescript-eslint/parser": "^5.49.0",
+    "eslint": "^8.32.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.0",
+    "jest": "^29.4.0",
+    "prettier": "2.8.3",
+    "standard-version": "^9.5.0",
+    "ts-jest": "^29.0.5",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "@noonewallet/core-js": "file:../core-js",
+    "@noonewallet/network-js": "file:../network-js",
+    "bech32": "^2.0.0",
+    "bn.js": "^5.2.1",
+    "crypto-js": "^4.1.1",
+    "ecpair": "^2.1.0",
+    "elliptic": "^6.5.4",
+    "is_js": "^0.9.0",
+    "js-big-decimal": "^1.3.15",
+    "protocol-buffers-encodings": "^1.2.0",
+    "tiny-secp256k1": "=1.1.6",
+    "tsc-alias": "^1.8.2"
+  }
+}
