@@ -1,7 +1,7 @@
 // @ts-ignore
 import {CoinsNetwork} from '@noonewallet/network-js'
 import {getCurrentTimestamp} from '@helpers/timestamp'
-import {IFeeSync, IHeader, ITxData} from '@helpers/types'
+import {IFeeSync, ITxData} from '@helpers/types'
 
 const requests = CoinsNetwork.bnb
 
@@ -12,15 +12,13 @@ export class BnbSync {
   private sequence: number
   private account_number: number
   private fee: IFeeSync[]
-  protected headers: IHeader
   private transactions: ITxData[]
 
   /**
    * Create a BinanceSync
    * @param {string} address - address ??
-   * @param {Object} headers - Request headers
    */
-  constructor(address: string, headers: IHeader) {
+  constructor(address: string) {
     this.address = address
     this.balance = 0
     this.symbol = ''
@@ -28,7 +26,6 @@ export class BnbSync {
     this.account_number = 0
     this.transactions = []
     this.fee = []
-    this.headers = headers
   }
 
   async Start(): Promise<void> {
@@ -42,7 +39,7 @@ export class BnbSync {
   async getInfo(): Promise<void> {
     this.balance = 0
 
-    const res = await requests.getInfo(this.address, this.headers)
+    const res = await requests.getInfo(this.address)
 
     if (res.hasOwnProperty('balances')) {
       this.balance = res.balances.length ? +res.balances[0].free || 0 : 0
@@ -67,7 +64,7 @@ export class BnbSync {
         limit: step,
       }
 
-      const res = await requests.getTxInfo(addParams, this.headers)
+      const res = await requests.getTxInfo(addParams)
 
       if (res && res?.txs) {
         this.transactions = [...res.txs, ...this.transactions]
@@ -83,7 +80,7 @@ export class BnbSync {
 
   async getFee(): Promise<void> {
     try {
-      this.fee = await requests.getFees(this.headers)
+      this.fee = await requests.getFees()
     } catch (err) {
       console.log('BNB getFeesRequest', err)
     }
