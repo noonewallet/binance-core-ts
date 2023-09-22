@@ -2,7 +2,7 @@ import bigDecimal from 'js-big-decimal'
 // @ts-ignore
 import ecc from 'tiny-secp256k1'
 import {sha256} from './crypto'
-import {HDNode} from '@noonewallet/core-js'
+import {HDNode} from '@noonewallet/crypto-core-ts'
 import {getBnbAddressByPublicKey} from '@BNB/address'
 
 const PRECISION = 8

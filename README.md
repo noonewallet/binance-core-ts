@@ -1,6 +1,6 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/noonewallet/binance-core-ts/blob/main/LICENSE)
 [![Platform](https://img.shields.io/badge/platform-web-blue.svg?style=flat)]()
-[![Version](https://img.shields.io/badge/Version-1.0.0-orange.svg)]()
+![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fnoonewallet%2Fbinance-core-ts%2Fmain%2Fpackage.json&query=version&label=version)
 
 ![binance-core-ts](https://github.com/noonewallet/noone-android-core-crypto/assets/111989613/1f062349-24d4-4824-9c00-b8f2724eca51)
 
@@ -54,6 +54,7 @@ console.log(
 ```
 
 ## Created using
+* [@noonewallet/crypto-core-ts](https://github.com/noonewallet/crypto-core-ts)
 * [bech32](https://github.com/bitcoinjs/bech32)
 * [bn.js](https://github.com/indutny/bn.js/)
 * [ecpair](https://github.com/bitcoinjs/ecpair)
